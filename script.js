@@ -171,12 +171,11 @@
       .filter((url) => /^https?:\/\//i.test(url));
     const bio = String(data.profile.bio || "").toLowerCase();
     const knownTopics = [
-      ["Geometric topology", "geometric topology"],
-      ["Borel conjecture", "borel conjecture"],
-      ["Non-positive curvature", "non-positive curvature"],
-      ["Probability", "probability"],
-      ["Mathematical physics", "mathematical physics"],
-      ["Combinatorics", "combinatorics"]
+      ["Algebraic graph theory", "algebraic graph theory"],
+      ["Spectral Turán numbers", "spectral turán numbers"],
+      ["Turán numbers", "turán numbers"],
+      ["Combinatorics", "combinatorics"],
+      ["Mathematical physics", "mathematical physics"]
     ].filter((topic) => bio.includes(topic[1])).map((topic) => topic[0]);
 
     const schema = {
