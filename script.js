@@ -90,7 +90,11 @@
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (description) description.content = profile.bio || "Academic personal homepage";
     if (ogTitle) ogTitle.content = pageTitle;
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.content = pageTitle;
     if (ogDescription) ogDescription.content = profile.bio || "Research, publications, and selected works.";
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.content = profile.bio || "Research, publications, and selected works.";
 
     setText("nav-name", name);
     setText("hero-name", name);
