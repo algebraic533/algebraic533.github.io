@@ -151,7 +151,7 @@
 
     renderEducation(data.education);
     renderPapers(data.papers);
-    renderWorks(data.works);
+    renderWorks(data.works || []);
     renderSocialLinks(links);
     updateStructuredData(data);
     refreshIcons();
@@ -193,7 +193,7 @@
         "@type": "EducationalOrganization",
         name: item.institution
       })),
-      hasPart: data.papers.filter((paper) => paper.title).map((paper) => ({
+      hasPart: (data.papers || []).filter((paper) => paper.title).map((paper) => ({
         "@type": "ScholarlyArticle",
         headline: paper.title,
         author: paper.authors || undefined,
@@ -349,6 +349,7 @@
 
   function renderWorks(items) {
     const list = document.getElementById("works-list");
+    if (!list) return;
     list.replaceChildren();
     if (!items.length) {
       list.append(emptyState("Selected work will appear here."));
